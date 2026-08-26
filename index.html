@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Freeman General Contractors — Built For Generations™</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+<header>
+  <button class="brand" id="homeBtn"><img class="mark" src="https://raw.githubusercontent.com/colemanvii/freemangc-v1/main/public/brand/fgc-logomark-red.svg" alt="FGC"><span class="wordmark">FREEMAN<small>GENERAL CONTRACTING</small></span></button>
+  <nav>
+    <button data-view="projects">Projects</button>
+    <button data-view="company">Company</button>
+    <button data-view="archive">Archive</button>
+    <button data-view="contact">Contact</button>
+  </nav>
+  <div class="header-mark">Built For Generations™</div>
+</header>
+
+<main class="stage">
+<section class="view active" id="home">
+  <div class="home">
+    <div class="home-copy">
+      <div class="micro">Cartersville, Georgia · General Contractors</div>
+      <h1>Built for<br><em>Generations.</em></h1>
+      <div class="manifesto"><b>Constructing Hospitality.</b><br>Freeman treats construction as a service business. The process should feel as considered as the finished place — producing durable work and relationships intended to last.</div>
+      <div class="home-lower"><blockquote>“A breath of fresh air in the construction industry. Highly communicative, attentive to detail, and easy to be around.”<cite>Paul Nair · Founder, Savi Provisions</cite></blockquote><img src="https://raw.githubusercontent.com/colemanvii/freemangc-v1/main/public/brand/freeman-eagle-red.svg" alt="Freeman eagle"></div>
+    </div>
+    <div class="home-image"><img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/690112c66907ba02f5612747_Beetlecat%20Thumb%20Freeman%20General%20Contractors_HP.jpg" alt="Beetlecat"><div class="cap">Beetlecat · Atlanta, Georgia</div></div>
+  </div>
+</section>
+
+<section class="view" id="projects">
+  <div class="projects">
+    <aside class="proj-list">
+      <div class="micro">Projects · 09</div>
+      <h2>Selected Work.</h2>
+      <div class="proj-list-items" id="projectList"></div>
+      <div class="proj-philosophy"><b>Constructing<br>Hospitality.</b><i>Built For Generations.</i></div>
+    </aside>
+    <section class="proj-info">
+      <div class="micro" id="pTop"></div>
+      <h1 id="pName"></h1>
+      <div class="summary" id="pSummary"></div>
+      <img class="eagle" src="https://raw.githubusercontent.com/colemanvii/freemangc-v1/main/public/brand/freeman-eagle-red.svg" alt="">
+      <div class="quickfacts" id="quickfacts"></div>
+      <button class="fullrecord" id="recordOpen">Full project record ↗</button>
+    </section>
+    <section class="proj-image"><img id="pImage" alt=""><div class="cap" id="pCap"></div></section>
+  </div>
+</section>
+
+<section class="view" id="company">
+  <div class="company">
+    <section class="company-intro"><div class="micro">Company</div><h1>Relationships<br>are the bedrock.</h1><p>Respect, integrity and commitment move from Freeman’s personal relationships into every relationship with <em>clients, subcontractors, suppliers, architects and engineers.</em></p><img src="https://raw.githubusercontent.com/colemanvii/freemangc-v1/main/public/brand/freeman-eagle-red.svg" alt=""></section>
+    <section class="company-panel">
+      <div class="subnav"><button class="active" data-sub="overview">Overview</button><button data-sub="services">Services</button><button data-sub="team">Team</button><button data-sub="faqs">FAQs</button></div>
+      <div>
+        <div class="subview active" id="overview"><div class="overview-grid"><div><h3>Built through relationships.</h3><p>Freeman General Contracting sees genuine relationships as the foundation of every project. The same standards applied in personal life — respect, integrity and commitment — carry into project delivery and collaboration.</p></div><div><h3>Construction as service.</h3><p>That relationship-first approach connects directly to Constructing Hospitality: a belief that the experience of building matters, not just the finished result.</p></div></div></div>
+        <div class="subview" id="services"><div class="service-list" id="servicesList"></div></div>
+        <div class="subview" id="team"><div class="people-tabs" id="peopleTabs"></div><div class="person"><h3 id="personName"></h3><div class="role" id="personRole"></div><p id="personCopy"></p></div></div>
+        <div class="subview" id="faqs"><div class="faq-list" id="faqList"></div></div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="view" id="archive"><div class="archive"><div class="archive-head"><h1>Archive.</h1><span>24 visual records · ongoing</span></div><div class="archive-grid" id="archiveGrid"></div></div></section>
+
+<section class="view" id="contact">
+  <div class="contact">
+    <section class="contact-copy"><div class="micro">Contact</div><h1>Bring the<br>vision to life.</h1><p>Freeman welcomes residential, commercial and other project inquiries.</p><div class="contact-meta">Tel. 706.263.3348<br>gabe@freemangc.com<br><br>Cartersville, Georgia<br>Built For Generations™</div></section>
+    <section class="form"><input class="field" placeholder="Full Name*"><input class="field" placeholder="Email*"><input class="field full" placeholder="Phone Number*"><div class="ptype"><button class="active">Residential</button><button>Commercial</button><button>Other</button></div><textarea class="field full" placeholder="Tell us about the project"></textarea><button class="send">Submit inquiry ↗</button></section>
+  </div>
+</section>
+
+<div class="record" id="record">
+  <div class="record-gallery"><div class="record-main"><img id="recordMain" alt=""></div><div class="thumbs" id="thumbs"></div></div>
+  <div class="record-copy"><button class="record-close" id="recordClose">← Projects</button><div class="micro" id="recordTop"></div><h2 id="recordName"></h2><div class="desc" id="recordDesc"></div><div class="more" id="recordMore"></div><div class="record-quote" id="recordQuote"></div><div class="credits" id="credits"></div></div>
+</div>
+</main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
