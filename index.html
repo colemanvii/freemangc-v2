@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Freeman General Contractors — Built For Generations™</title>
-<link rel="icon" href="favicon.ico?v=ae1faaab" sizes="any">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=ae1faaab">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=ae1faaab">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=ae1faaab">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=ae1faaab">
-<link rel="shortcut icon" href="favicon.ico?v=ae1faaab">
-<link rel="stylesheet" href="styles.css?v=ae1faaab">
+<link rel="icon" href="favicon.ico?v=gabeonly" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=gabeonly">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=gabeonly">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=gabeonly">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=gabeonly">
+<link rel="shortcut icon" href="favicon.ico?v=gabeonly">
+<link rel="stylesheet" href="styles.css?v=gabeonly">
 </head>
 <body>
 <div class="site">
@@ -62,7 +62,7 @@
   <div class="company">
     <section class="company-intro"><div class="micro">Company</div><h1>Relationships<br>are the bedrock.</h1><p>Respect, integrity and commitment shape every relationship — with <em>clients, craftspeople, suppliers, architects and engineers.</em></p><img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6904f319ecdcf81821e678cb_Red%20Freeman%20Eagle.svg" alt=""></section>
     <section class="company-panel">
-      <div class="subnav"><button class="active" data-sub="overview">Overview</button><button data-sub="services">Services</button><button data-sub="team">Team</button><button data-sub="faqs">FAQs</button></div>
+      <div class="subnav"><button class="active" data-sub="overview">Overview</button><button data-sub="services">Services</button><button data-sub="team">Founder</button><button data-sub="faqs">FAQs</button></div>
       <div>
         <div class="subview active" id="overview"><div class="overview-grid"><div><h3>Built through relationships.</h3><p>Freeman approaches every project with the same standards we value personally: respect, integrity and commitment. Strong work begins with trust — among the client, design team, trades and builder.</p></div><div><h3>Construction as service.</h3><p>Constructing Hospitality is our belief that how a project is built matters. Clear communication, thoughtful coordination and attention to detail should define the process as much as the finished work.</p></div></div></div>
         <div class="subview" id="services"><div class="service-list" id="servicesList"></div></div>
@@ -89,6 +89,13 @@
 </main>
 </div>
 
-<script src="app.js?v=ae1faaab"></script>
+<script src="app.js?v=gabeonly"></script>
+<script>
+  if (typeof people !== 'undefined') {
+    people.splice(1);
+    if (window.peopleTabs) peopleTabs.innerHTML='';
+    if (typeof showPerson === 'function') showPerson(0);
+  }
+</script>
 </body>
 </html>
