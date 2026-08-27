@@ -67,4 +67,8 @@ document.querySelector('.ptype button.active')?.setAttribute('aria-pressed','tru
 const sendButton=document.querySelector('.send');
 if(sendButton){sendButton.type='button';sendButton.addEventListener('click',()=>{const fields=[...document.querySelectorAll('.form .field')];const name=fields[0]?.value?.trim()||'';const email=fields[1]?.value?.trim()||'';const phone=fields[2]?.value?.trim()||'';const message=fields[3]?.value?.trim()||'';const projectType=document.querySelector('.ptype button.active')?.textContent?.trim()||'';const subject=encodeURIComponent(`Project inquiry${name?` — ${name}`:''}`);const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject type: ${projectType}\n\n${message}`);window.location.href=`mailto:gabe@freemangc.com?subject=${subject}&body=${body}`;});}
 
+const mobileHeaderStyle=document.createElement('style');
+mobileHeaderStyle.textContent=`@media(max-width:700px){header{min-height:94px!important;grid-template-rows:48px 46px!important}.brand .logo{display:none!important}.brand{gap:0!important}.brand .mark{width:29px!important}.header-mark{font-size:8px!important;letter-spacing:.09em!important}nav button{padding:12px 0 9px!important}}`;
+document.head.appendChild(mobileHeaderStyle);
+
 showView('home');
