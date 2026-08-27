@@ -6,6 +6,12 @@
 <title>Freeman General Contracting — Client Portal</title>
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="portal.css?v=3">
+<style>
+.live-state{display:inline-flex;align-items:center;gap:5px}
+.live-state i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#71c986;box-shadow:0 0 8px rgba(113,201,134,.72);animation:freeman-live 2.15s ease-in-out infinite}
+@keyframes freeman-live{0%,100%{opacity:.48;transform:scale(.9);box-shadow:0 0 5px rgba(113,201,134,.42)}50%{opacity:1;transform:scale(1.08);box-shadow:0 0 11px rgba(113,201,134,.9)}}
+@media(prefers-reduced-motion:reduce){.live-state i{animation:none;opacity:.8}}
+</style>
 </head>
 <body>
 <main class="portal-wrap">
@@ -14,7 +20,7 @@
     <div class="portal-grid">
       <section class="signal-card">
         <div class="signal-brand">FREEMAN GENERAL CONTRACTING</div>
-        <div class="signal-kicker"><span>CLIENT PORTAL</span><span>● LIVE</span></div>
+        <div class="signal-kicker"><span>CLIENT PORTAL</span><span class="live-state"><i></i> LIVE</span></div>
         <div class="auth-line"><span class="dot"></span> AUTHENTICATED · GOOD MORNING, FORD.</div>
 
         <div class="project-block">
