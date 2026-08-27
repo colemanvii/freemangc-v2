@@ -1,5 +1,5 @@
 const projects=[
-{name:"Beetlecat",location:"Atlanta, Georgia",type:"Hospitality",summary:"Designed as a warm, layered hospitality space, Beetlecat required a balance of precision and personality. Freeman GC led construction with a focus on collaboration, sequencing, and detail—bringing together materials, systems, and finishes in a way that feels cohesive and lived-in. The result is a space that enhances the rhythm of service while inviting guests to linger.",details:"",quote:"Freeman treated our project like it mattered — and it showed in the finished work..",credits:[["Client","Rocket Farm Restaurants"],["Photography","Jared Swafford"],["Interior Design","Chuck Marie Studio"],["Total sq. ft.","2,000+"],["Complete","2024"]],images:["https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/690112c66907ba02f5612747_Beetlecat%20Thumb%20Freeman%20General%20Contractors_HP.jpg"]},
+{name:"Beetlecat",location:"Atlanta, Georgia",type:"Hospitality",summary:"Designed as a warm, layered hospitality space, Beetlecat required a balance of precision and personality. Freeman GC led construction with a focus on collaboration, sequencing, and detail—bringing together materials, systems, and finishes in a way that feels cohesive and lived-in. The result is a space that enhances the rhythm of service while inviting guests to linger.",details:"",quote:"Freeman treated our project like it mattered — and it showed in the finished work.",credits:[["Client","Rocket Farm Restaurants"],["Photography","Jared Swafford"],["Interior Design","Chuck Marie Studio"],["Total sq. ft.","2,000+"],["Complete","2024"]],images:["https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/690112c66907ba02f5612747_Beetlecat%20Thumb%20Freeman%20General%20Contractors_HP.jpg"]},
 {name:"The Optimist",location:"Atlanta, Georgia",type:"Hospitality",summary:"Freeman General Contracting was given the opportunity to refresh the Oyster Bar at the highly esteemed restaurant in Atlanta, The Optimist. This project was on a tight deadline of 3 weeks. FGC finished on time and under budget. This project boasts ultra high-end finishes - custom radius window, radius tile around oven, custom millwork pieces, custom stainless steel pieces. This project had it all.",details:"",quote:"",credits:[["Client","Rocket Farm Restaurants"],["Photography","Jared Swafford"],["Interior Design","Chuck Marie Studio"],["Total sq. ft.","2,000+"],["Complete","2024"]],images:["https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6916c3cc412995612baf28e4_The%20Optimist_Freeman%20General%20Contractors%200.jpg"]},
 {name:"Barnsley Gardens",location:"Adairsville, Georgia",type:"Hospitality",summary:"This Barnsley project defined by subtlety, sequencing, and respect for place. Freeman approached construction with a focus on precision and care, allowing materials, landscape, and structure to work together seamlessly. The result is an environment that feels settled and enduring, shaped as much by restraint as by craftsmanship.",details:"",quote:"",credits:[["Client","Barnsley Resorts"],["Photography","Jared Swafford"],["Interior Design","Chuck Marie Studio"],["Total sq. ft.","2,000+"],["Complete","2024"]],images:["https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6916c7910f0d654dd4daa28f_Barnsley%20Gardens_Freeman%20General%20Contractors%201.jpg"]},
 {name:"Bocado Pizza",location:"Atlanta, Georgia",type:"Commercial",summary:"Bocado Pizza was a full commercial renovation boasting new custom millwork, a new bar area, all new flooring in the main dining and kitchen area, as well as new finishes throughout. Brand new outdoor seating area completed as well.",details:"",quote:"Professional, responsive, and deeply knowledgeable. Freeman understands both construction and the importance of trust.",credits:[["Client","Bocado Pizza"],["Photography","Freeman GC"],["Interior Design","Interior Designer"],["Total sq. ft.","2,000+"],["Complete","2024"]],images:["https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/692db75041d703e9a18d4085_Bocado%20Pizza_Interior%20Seating.jpeg"]},
@@ -30,16 +30,41 @@ const faqs=[
 ["How do you manage subcontractors and suppliers?","We manage subcontractors and suppliers through rigorous vetting, clear contracts, and ongoing communication. We ensure they meet our quality standards and adhere to project schedules and specifications."]
 ];
 
-function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(window.innerWidth<=700)window.scrollTo({top:0,behavior:'instant'});}
-homeBtn.onclick=()=>showView('home');document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>{const active=v.id===id;v.classList.toggle('active',active);v.setAttribute('aria-hidden',String(!active));});
+  document.querySelectorAll('nav button').forEach(b=>{const active=b.dataset.view===id;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});
+  if(window.innerWidth<=700)window.scrollTo({top:0,behavior:'instant'});
+}
+homeBtn.onclick=()=>showView('home');
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
 
 let current=0;const plist=document.getElementById('projectList');
-function showProject(i){current=i;const p=projects[i];[...plist.children].forEach((b,j)=>b.classList.toggle('active',j===i));pTop.textContent=`${p.location} · ${p.type} · Project ${String(i+1).padStart(2,'0')} / 09`;pName.textContent=p.name;pSummary.textContent=p.summary;pDetails.textContent=p.details||'';pDetails.style.display=p.details?'block':'none';pQuote.textContent=p.quote?`“${p.quote}”`:'';pQuote.style.display=p.quote?'block':'none';pImage.style.opacity=0;setTimeout(()=>{pImage.src=p.images[0];pImage.style.opacity=1},60);pCap.textContent=`${p.name} · ${p.location}`;quickfacts.innerHTML=p.credits.map(x=>`<div class="qf"><div class="k">${x[0]}</div><div class="v">${x[1]}</div></div>`).join('');}
-projects.forEach((p,i)=>{const b=document.createElement('button');b.className='proj-btn'+(i===0?' active':'');b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="nm">${p.name}</span>`;b.onclick=()=>showProject(i);plist.appendChild(b)});showProject(0);
+function showProject(i){
+  current=i;const p=projects[i];
+  [...plist.children].forEach((b,j)=>{const active=j===i;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+  pTop.textContent=`${p.location} · ${p.type} · Project ${String(i+1).padStart(2,'0')} / 09`;
+  pName.textContent=p.name;pSummary.textContent=p.summary;
+  pDetails.textContent=p.details||'';pDetails.style.display=p.details?'block':'none';
+  pQuote.textContent=p.quote?`“${p.quote}”`:'';pQuote.style.display=p.quote?'block':'none';
+  pImage.style.opacity=0;pImage.alt=`${p.name} — ${p.location}`;
+  setTimeout(()=>{pImage.src=p.images[0];pImage.style.opacity=1},60);
+  pCap.textContent=`${p.name} · ${p.location}`;
+  quickfacts.innerHTML=p.credits.map(x=>`<div class="qf"><div class="k">${x[0]}</div><div class="v">${x[1]}</div></div>`).join('');
+}
+projects.forEach((p,i)=>{const b=document.createElement('button');b.className='proj-btn'+(i===0?' active':'');b.type='button';b.setAttribute('aria-label',`View ${p.name}`);b.setAttribute('aria-pressed',String(i===0));b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="nm">${p.name}</span>`;b.onclick=()=>showProject(i);plist.appendChild(b)});showProject(0);
 
-document.querySelectorAll('.subnav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.subview').forEach(v=>v.classList.remove('active'));document.getElementById(b.dataset.sub).classList.add('active')});
+document.querySelectorAll('.subnav button').forEach(b=>{b.type='button';b.onclick=()=>{document.querySelectorAll('.subnav button').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-selected','false')});b.classList.add('active');b.setAttribute('aria-selected','true');document.querySelectorAll('.subview').forEach(v=>v.classList.remove('active'));document.getElementById(b.dataset.sub).classList.add('active')}});
+document.querySelector('.subnav button.active')?.setAttribute('aria-selected','true');
+
 services.forEach(s=>{const d=document.createElement('div');d.className='service-card';d.innerHTML=`<h3>${s[0]}</h3><p>${s[1]}</p>`;servicesList.appendChild(d)});
 function showPerson(i){personName.textContent=people[i][0];personRole.textContent=people[i][1];personCopy.textContent=people[i][2]}showPerson(0);
 faqs.forEach(f=>{const d=document.createElement('div');d.className='faq-item';d.innerHTML=`<h4>${f[0]}</h4><p>${f[1]}</p>`;faqList.appendChild(d)});
-archive.forEach((src,i)=>{const b=document.createElement('button');b.className='archive-cell';b.innerHTML=`<img src="${src}" alt="Archive ${i+1}"><span>${String(i+1).padStart(3,'0')}</span>`;archiveGrid.appendChild(b)});
-document.querySelectorAll('.ptype button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.ptype button').forEach(x=>x.classList.remove('active'));b.classList.add('active')});
+archive.forEach((src,i)=>{const b=document.createElement('button');b.type='button';b.className='archive-cell';b.setAttribute('aria-label',`Freeman field archive image ${i+1}`);b.innerHTML=`<img src="${src}" alt="Freeman field archive ${i+1}" loading="lazy" decoding="async"><span>${String(i+1).padStart(3,'0')}</span>`;archiveGrid.appendChild(b)});
+
+document.querySelectorAll('.ptype button').forEach(b=>{b.type='button';b.onclick=()=>{document.querySelectorAll('.ptype button').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});b.classList.add('active');b.setAttribute('aria-pressed','true')}});
+document.querySelector('.ptype button.active')?.setAttribute('aria-pressed','true');
+
+const sendButton=document.querySelector('.send');
+if(sendButton){sendButton.type='button';sendButton.addEventListener('click',()=>{const fields=[...document.querySelectorAll('.form .field')];const name=fields[0]?.value?.trim()||'';const email=fields[1]?.value?.trim()||'';const phone=fields[2]?.value?.trim()||'';const message=fields[3]?.value?.trim()||'';const projectType=document.querySelector('.ptype button.active')?.textContent?.trim()||'';const subject=encodeURIComponent(`Project inquiry${name?` — ${name}`:''}`);const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nProject type: ${projectType}\n\n${message}`);window.location.href=`mailto:gabe@freemangc.com?subject=${subject}&body=${body}`;});}
+
+showView('home');
