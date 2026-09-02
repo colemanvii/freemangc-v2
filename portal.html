@@ -3,80 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f2eee4">
+<meta name="theme-color" content="#ece7dc">
 <title>Freeman General Contracting — Client Portal</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="portal.css?v=viewport1">
+<link rel="stylesheet" href="portal.css?v=haven1">
 </head>
 <body>
 <main class="portal-wrap">
-  <header class="portal-header">
-    <a class="portal-brand" href="/" aria-label="Freeman General Contracting home">
-      <img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/69010b8d9ae70d8e5846b9e2_FGC%20Logomark.svg" alt="FGC">
-    </a>
-    <div class="portal-greeting">
-      <span>CLIENT PORTAL</span>
-      <strong>Hello, Ford.</strong>
-    </div>
-    <div class="portal-sync" aria-label="Project data synced 12 minutes ago"><i></i><span>SYNCED 12m</span></div>
-  </header>
+  <div class="session-pill">FORD FRY <span>|</span> LOG OUT</div>
 
-  <section class="portal-shell">
-    <div class="project-head">
-      <div class="project-identity">
-        <span class="eyebrow">ROCKET FARM RESTAURANTS · ATLANTA, GEORGIA</span>
-        <h1>The Optimist</h1>
-        <p>Oyster Bar Refresh · Active Construction</p>
-      </div>
-      <div class="opening-block">
-        <span class="eyebrow">TARGET OPENING</span>
-        <strong>OCT 12</strong>
-        <div><b>40 DAYS</b><span>ON TRACK</span></div>
-      </div>
-    </div>
+  <section class="console" aria-label="Freeman client portal">
+    <div class="console-body">
+      <section class="crt-panel">
+        <div class="crt-screen">
+          <div class="crt-brand">FREEMAN GENERAL CONTRACTING</div>
+          <div class="crt-meta">
+            <span>CLIENT: FORD FRY</span>
+            <span>PROJECT: THE OPTIMIST</span>
+            <span>ATLANTA, GEORGIA</span>
+          </div>
 
-    <section class="pulse-card">
-      <div class="pulse-label"><span>PROJECT PULSE</span><b>SEP 02, 2026</b></div>
-      <p>Interior framing is complete and rough-in inspections passed. Millwork begins Monday. We need your approval on the bar-top finish by Thursday to preserve the October 12 opening.</p>
-      <div class="pulse-author"><span>GABE FREEMAN</span><b>PROJECT LEAD</b></div>
-    </section>
+          <div class="crt-status">
+            <span>STATUS: <b>ON TRACK</b></span>
+            <span>TARGET: OCT 12 · 40 DAYS</span>
+          </div>
 
-    <div class="focus-grid">
-      <article class="decision-card">
-        <div class="decision-topline"><span>YOUR ATTENTION</span><b>DUE THU · SEP 04</b></div>
-        <div class="decision-copy">
-          <span class="decision-kicker">BAR-TOP FINISH</span>
-          <h2>Freeman recommends<br>honed soapstone.</h2>
-          <p>Option B matches the approved palette and keeps fabrication on schedule. Waiting beyond Thursday adds approximately two weeks to lead time.</p>
+          <div class="crt-rule"></div>
+
+          <div class="crt-section">
+            <span class="crt-label">PROJECT PULSE</span>
+            <p>Interior framing is complete and rough-in inspections passed. Millwork begins Monday. We need your approval on the bar-top finish by Thursday to preserve the October 12 opening.</p>
+          </div>
+
+          <div class="crt-section next-line">
+            <span class="crt-label">NEXT</span>
+            <p>SEP 07 / Millwork installation<br>SEP 24 / Equipment set<br>OCT 07 / Final inspections</p>
+          </div>
+
+          <div class="crt-footer">SYNCED 12m AGO · PROCORE SOURCE</div>
         </div>
-        <div class="decision-actions">
-          <button class="primary-action">VIEW DECISION</button>
-          <button class="secondary-action">REQUEST A CALL</button>
-        </div>
-      </article>
+      </section>
 
-      <figure class="field-card">
-        <div class="field-label"><span>FROM THE FIELD</span><b>SEP 02</b></div>
-        <img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6916c3cc412995612baf28e4_The%20Optimist_Freeman%20General%20Contractors%200.jpg" alt="The Optimist project progress">
-        <figcaption>Oyster bar millwork and finish coordination.</figcaption>
-      </figure>
+      <section class="brief-panel">
+        <div class="brief-head"><span>FREEMAN BRIEF</span><span>SEP 02</span></div>
+
+        <div class="brief-card">
+          <span class="brief-kicker">YOUR ATTENTION</span>
+          <h1>Bar-top finish.</h1>
+          <p class="recommendation">Freeman recommends <strong>honed soapstone.</strong></p>
+          <p class="impact">Approve by Thursday to preserve the October 12 opening. Waiting beyond Thursday adds approximately two weeks to fabrication.</p>
+
+          <div class="brief-actions">
+            <button class="decision-button">VIEW DECISION</button>
+            <a href="tel:+17062633348">CALL GABE</a>
+          </div>
+        </div>
+
+        <div class="contact-strip">
+          <span>PROJECT LEAD</span>
+          <strong>Gabe Freeman</strong>
+          <a href="mailto:gabe@freemangc.com">gabe@freemangc.com</a>
+        </div>
+      </section>
     </div>
 
-    <section class="next-strip">
-      <div class="next-title"><span>NEXT</span><b>3 MILESTONES</b></div>
-      <div class="milestone"><span>SEP 07</span><strong>Millwork installation</strong></div>
-      <div class="milestone"><span>SEP 24</span><strong>Equipment set</strong></div>
-      <div class="milestone"><span>OCT 07</span><strong>Final inspections</strong></div>
-    </section>
-
-    <footer class="portal-footer">
-      <div class="portal-links">
-        <button>ALL PROJECTS <b>03</b></button>
-        <button>DOCUMENTS</button>
-        <button>PROJECT TEAM</button>
+    <nav class="console-controls" aria-label="Portal navigation">
+      <div class="blank-keys" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i>
       </div>
-      <div class="record-note">Procore is the official project record · Freeman Portal is a curated client summary</div>
-    </footer>
+      <button>PROJECTS</button>
+      <button>FIELD</button>
+      <button>DOCS</button>
+      <button>TEAM</button>
+      <a class="home-key" href="/">HOME</a>
+      <span class="console-state">FREEMAN PORTAL // ACTIVE</span>
+    </nav>
   </section>
 
   <div class="motto">BUILT FOR GENERATIONS</div>
