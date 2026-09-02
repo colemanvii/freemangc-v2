@@ -7,7 +7,7 @@
 <title>Freeman General Contracting — Client Portal</title>
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="portal.css?v=mobileglance1">
-<link rel="stylesheet" href="portal-business.css?v=5">
+<link rel="stylesheet" href="portal-business.css?v=6">
 </head>
 <body>
 <main class="portal-wrap">
@@ -21,50 +21,37 @@
 
   <section class="portal-shell" aria-label="Freeman client portal">
     <section class="instrument-body portal-view active-view" data-view="project">
-      <aside class="project-rail">
+      <aside class="project-rail" aria-label="Project signal">
+        <div class="rail-mode">SIGNAL</div>
         <div class="rail-project">
           <span>PROJECT</span>
           <strong>The Optimist</strong>
-          <p>Rocket Farm Restaurants · Atlanta</p>
+          <p>Rocket Farm Restaurants<br>Atlanta, Georgia</p>
         </div>
-
         <div class="rail-status">
           <span>STATUS</span>
           <strong><i></i>ON TRACK</strong>
         </div>
-
         <div class="rail-opening">
           <span>TARGET OPENING</span>
           <strong>OCT 12</strong>
           <b>40 DAYS</b>
         </div>
-
-        <div class="rail-source">
-          <i></i>
-          <span>PROCORE</span>
-        </div>
+        <div class="rail-source"><i></i><span>PROCORE CONNECTED</span></div>
       </aside>
 
-      <section class="client-brief">
+      <section class="client-brief" aria-label="Freeman project brief">
         <div class="brief-heading">
-          <div>
-            <span>PROJECT PULSE</span>
-            <b>SEP 02 · GABE FREEMAN</b>
-          </div>
+          <div><span>PROJECT PULSE</span><b>SEP 02 · GABE FREEMAN</b></div>
         </div>
 
         <p class="pulse-copy">Rough-in inspections passed and millwork begins Monday. We need your approval on the bar-top finish by Thursday to preserve the October 12 opening.</p>
 
         <article class="decision-panel">
-          <div class="decision-heading">
-            <span>YOUR ATTENTION</span>
-            <b>NEEDED BY THURSDAY</b>
-          </div>
+          <div class="decision-heading"><span>YOUR ATTENTION</span><b>NEEDED THURSDAY</b></div>
           <h2>Bar-top finish</h2>
           <p><strong>Freeman recommends honed soapstone.</strong> It matches the approved palette and keeps fabrication on schedule. Waiting beyond Thursday adds approximately two weeks.</p>
-          <div class="decision-actions">
-            <button>VIEW DECISION</button>
-          </div>
+          <div class="decision-actions"><button>VIEW DECISION</button></div>
         </article>
 
         <section class="brief-milestones">
@@ -74,6 +61,28 @@
           <div><span>OCT 07</span><strong>Final inspections</strong></div>
         </section>
       </section>
+
+      <aside class="now-panel desktop-ops" aria-label="Current project activity">
+        <div class="now-heading"><span>NOW</span><b>THIS WEEK</b></div>
+        <div class="now-list">
+          <div class="now-row done">
+            <i></i>
+            <div><span>COMPLETE</span><strong>Rough-in inspections passed</strong></div>
+          </div>
+          <div class="now-row active">
+            <i></i>
+            <div><span>IN PROGRESS</span><strong>Millwork coordination</strong></div>
+          </div>
+          <div class="now-row review">
+            <i></i>
+            <div><span>REVIEW</span><strong>Bar-top sample received</strong></div>
+          </div>
+        </div>
+        <div class="now-note">
+          <span>SYSTEM NOTE</span>
+          <p>No schedule risk beyond the client decision shown here.</p>
+        </div>
+      </aside>
     </section>
 
     <section class="mobile-view portal-view" data-view="field" aria-label="Field view">
