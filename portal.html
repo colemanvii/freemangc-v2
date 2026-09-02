@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#ece7dc">
 <title>Freeman General Contracting — Client Portal</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="portal.css?v=freemanfirst1">
+<link rel="stylesheet" href="portal.css?v=mobileglance1">
 </head>
 <body>
 <main class="portal-wrap">
@@ -26,7 +26,7 @@
       <div class="status-source"><i></i><span>PROCORE SOURCE</span></div>
     </div>
 
-    <section class="brief-surface">
+    <section class="brief-surface portal-view active-view" data-view="project">
       <div class="brief-top">
         <div class="project-title">
           <span>OYSTER BAR REFRESH · ACTIVE CONSTRUCTION</span>
@@ -54,14 +54,14 @@
           </div>
         </article>
 
-        <figure class="field-card">
+        <figure class="field-card desktop-field">
           <img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6916c3cc412995612baf28e4_The%20Optimist_Freeman%20General%20Contractors%200.jpg" alt="The Optimist project progress">
           <div class="field-tag"><span>FROM THE FIELD</span><b>SEP 02</b></div>
           <figcaption>Oyster bar millwork and finish coordination.</figcaption>
         </figure>
       </div>
 
-      <section class="milestone-strip">
+      <section class="milestone-strip desktop-milestones">
         <div class="milestone-title"><span>NEXT</span><b>3 MILESTONES</b></div>
         <div class="milestone"><span>SEP 07</span><strong>Millwork installation</strong></div>
         <div class="milestone"><span>SEP 24</span><strong>Equipment set</strong></div>
@@ -69,11 +69,40 @@
       </section>
     </section>
 
+    <section class="mobile-view portal-view" data-view="field" aria-label="Field view">
+      <div class="mobile-view-head"><span>FROM THE FIELD</span><b>SEP 02</b></div>
+      <figure class="mobile-field-card">
+        <img src="https://cdn.prod.website-files.com/666b9585b7fd3bd24dfbba73/6916c3cc412995612baf28e4_The%20Optimist_Freeman%20General%20Contractors%200.jpg" alt="The Optimist project progress">
+        <figcaption>Oyster bar millwork and finish coordination.</figcaption>
+      </figure>
+      <p class="mobile-view-note">A curated field view, not the raw Procore photo stream.</p>
+    </section>
+
+    <section class="mobile-view portal-view" data-view="documents" aria-label="Documents view">
+      <div class="mobile-view-head"><span>DOCUMENTS</span><b>CLIENT VIEW</b></div>
+      <div class="mobile-list">
+        <button><span>LATEST DRAWINGS</span><b>OPEN</b></button>
+        <button><span>APPROVED FINISHES</span><b>OPEN</b></button>
+        <button><span>MEETING NOTES</span><b>OPEN</b></button>
+      </div>
+      <p class="mobile-view-note">Only the documents Freeman has chosen to surface for the client.</p>
+    </section>
+
+    <section class="mobile-view portal-view" data-view="team" aria-label="Project team view">
+      <div class="mobile-view-head"><span>PROJECT TEAM</span><b>THE OPTIMIST</b></div>
+      <div class="team-card">
+        <span>PROJECT LEAD</span>
+        <strong>Gabe Freeman</strong>
+        <p>Freeman General Contracting</p>
+        <div><a href="tel:+17062633348">CALL</a><a href="mailto:gabe@freemangc.com">EMAIL</a></div>
+      </div>
+    </section>
+
     <nav class="portal-controls" aria-label="Portal navigation">
-      <button class="active">PROJECT</button>
-      <button>FIELD</button>
-      <button>DOCUMENTS</button>
-      <button>TEAM</button>
+      <button class="active" data-target="project">PROJECT</button>
+      <button data-target="field">FIELD</button>
+      <button data-target="documents">DOCUMENTS</button>
+      <button data-target="team">TEAM</button>
       <span class="control-spacer"></span>
       <a href="/">MAIN SITE</a>
       <span class="control-state">FREEMAN PORTAL // ACTIVE</span>
@@ -82,5 +111,20 @@
 
   <div class="motto">BUILT FOR GENERATIONS</div>
 </main>
+<script>
+(() => {
+  const nav = document.querySelector('.portal-controls');
+  if (!nav) return;
+  const buttons = [...nav.querySelectorAll('button[data-target]')];
+  const views = [...document.querySelectorAll('.portal-view')];
+  buttons.forEach(button => button.addEventListener('click', () => {
+    if (window.innerWidth > 700) return;
+    const target = button.dataset.target;
+    buttons.forEach(b => b.classList.toggle('active', b === button));
+    views.forEach(view => view.classList.toggle('active-view', view.dataset.view === target));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+})();
+</script>
 </body>
 </html>
