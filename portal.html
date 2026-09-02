@@ -7,7 +7,7 @@
 <title>Freeman General Contracting — Client Portal</title>
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="portal.css?v=mobileglance1">
-<link rel="stylesheet" href="portal-business.css?v=3">
+<link rel="stylesheet" href="portal-business.css?v=4">
 </head>
 <body>
 <main class="portal-wrap">
@@ -20,59 +20,89 @@
   </header>
 
   <section class="portal-shell" aria-label="Freeman client portal">
-    <div class="status-rail">
-      <div class="status-project"><span>THE OPTIMIST</span><b>ROCKET FARM RESTAURANTS · ATLANTA</b></div>
-      <div class="status-item"><span>STATUS</span><strong>ON TRACK</strong></div>
-      <div class="status-item"><span>TARGET OPENING</span><strong>OCT 12</strong><b>40 DAYS</b></div>
-      <div class="status-source"><i></i><span>PROCORE SOURCE</span></div>
-    </div>
+    <section class="instrument-body portal-view active-view" data-view="project">
+      <aside class="project-rail">
+        <div class="rail-project">
+          <span>PROJECT</span>
+          <strong>The Optimist</strong>
+          <p>Rocket Farm Restaurants<br>Atlanta, Georgia</p>
+        </div>
 
-    <section class="brief-surface portal-view active-view" data-view="project">
-      <section class="pulse-row">
-        <div class="pulse-label"><span>PROJECT PULSE</span><b>SEP 02 · GABE FREEMAN</b></div>
-        <p>Rough-in inspections passed and millwork begins Monday. We need your approval on the bar-top finish by Thursday to preserve the October 12 opening.</p>
-      </section>
+        <div class="rail-status">
+          <span>STATUS</span>
+          <strong><i></i>ON TRACK</strong>
+        </div>
 
-      <div class="focus-grid">
-        <article class="decision-card">
-          <div class="decision-top"><span>YOUR ATTENTION</span><b>DUE THU · SEP 04</b></div>
-          <div class="decision-copy">
-            <span class="decision-kicker">BAR-TOP FINISH</span>
-            <h2>Honed soapstone.</h2>
-            <p><strong>Freeman recommends Option B.</strong> It matches the approved palette and keeps fabrication on schedule. Waiting beyond Thursday adds approximately two weeks.</p>
+        <div class="rail-opening">
+          <span>TARGET OPENING</span>
+          <strong>OCT 12</strong>
+          <b>40 DAYS</b>
+        </div>
+
+        <div class="rail-source">
+          <i></i>
+          <span>PROCORE SOURCE</span>
+        </div>
+      </aside>
+
+      <section class="client-brief">
+        <div class="brief-heading">
+          <div>
+            <span>PROJECT PULSE</span>
+            <b>SEP 02 · GABE FREEMAN</b>
           </div>
+          <em>FREEMAN BRIEF</em>
+        </div>
+
+        <p class="pulse-copy">Rough-in inspections passed and millwork begins Monday. We need your approval on the bar-top finish by Thursday to preserve the October 12 opening.</p>
+
+        <article class="decision-panel">
+          <div class="decision-heading">
+            <span>YOUR ATTENTION</span>
+            <b>DUE THU · SEP 04</b>
+          </div>
+          <span class="decision-kicker">BAR-TOP FINISH</span>
+          <h2>Honed soapstone.</h2>
+          <p><strong>Freeman recommends Option B.</strong> It matches the approved palette and keeps fabrication on schedule. Waiting beyond Thursday adds approximately two weeks.</p>
           <div class="decision-actions">
             <button>VIEW DECISION</button>
             <a href="tel:+17062633348">CALL GABE</a>
           </div>
         </article>
 
-        <section class="ops-card desktop-ops" aria-label="Recent project activity">
-          <div class="ops-head"><span>RECENT ACTIVITY</span><b>LAST 7 DAYS</b></div>
-          <div class="activity-row">
-            <div class="activity-mark complete"></div>
-            <div><span>SEP 02 · 08:42</span><strong>Rough-in inspections passed</strong></div>
-            <b>COMPLETE</b>
-          </div>
-          <div class="activity-row">
-            <div class="activity-mark active"></div>
-            <div><span>SEP 02 · 07:15</span><strong>Millwork coordination updated</strong></div>
-            <b>ACTIVE</b>
-          </div>
-          <div class="activity-row">
-            <div class="activity-mark"></div>
-            <div><span>SEP 01 · 16:20</span><strong>Bar-top sample received</strong></div>
-            <b>REVIEW</b>
-          </div>
+        <section class="brief-milestones">
+          <div class="brief-milestone-label"><span>NEXT</span><b>3 MILESTONES</b></div>
+          <div><span>SEP 07</span><strong>Millwork installation</strong></div>
+          <div><span>SEP 24</span><strong>Equipment set</strong></div>
+          <div><span>OCT 07</span><strong>Final inspections</strong></div>
         </section>
-      </div>
-
-      <section class="milestone-strip desktop-milestones">
-        <div class="milestone-title"><span>NEXT</span><b>3 MILESTONES</b></div>
-        <div class="milestone"><span>SEP 07</span><strong>Millwork installation</strong></div>
-        <div class="milestone"><span>SEP 24</span><strong>Equipment set</strong></div>
-        <div class="milestone"><span>OCT 07</span><strong>Final inspections</strong></div>
       </section>
+
+      <aside class="ops-column desktop-ops" aria-label="Recent project activity">
+        <div class="ops-title">
+          <span>RECENT ACTIVITY</span>
+          <b>LAST 7 DAYS</b>
+        </div>
+
+        <div class="ops-row">
+          <div class="ops-dot complete"></div>
+          <div><span>SEP 02 · 08:42</span><strong>Rough-in inspections passed</strong></div>
+          <b>COMPLETE</b>
+        </div>
+        <div class="ops-row">
+          <div class="ops-dot active"></div>
+          <div><span>SEP 02 · 07:15</span><strong>Millwork coordination updated</strong></div>
+          <b>ACTIVE</b>
+        </div>
+        <div class="ops-row">
+          <div class="ops-dot"></div>
+          <div><span>SEP 01 · 16:20</span><strong>Bar-top sample received</strong></div>
+          <b>REVIEW</b>
+        </div>
+
+        <button class="ops-more">VIEW ALL ACTIVITY</button>
+        <div class="ops-foot"><span>LAST CLIENT BRIEF</span><b>SEP 02 · 08:55</b></div>
+      </aside>
     </section>
 
     <section class="mobile-view portal-view" data-view="field" aria-label="Field view">
